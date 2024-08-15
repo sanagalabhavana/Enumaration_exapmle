@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.logging.Logger;
+
+/**
+*day in week program
+*/
+
+/**
+*enum class
+*/
+enum Week {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday;
+}
+
+public class Enum_example {
+
+private static final Logger logger=Logger.getLogger(Enum_example.class.getName());
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+       logger.info("Enter the day of a week :");
+        String day = s.nextLine();
+        Week arr[] = Week.values();
+        for (int i = 0; i < arr.length; i++) {
+/**
+*Convert the input string to uppercase to match the enum constant format
+*/
+            if (arr[i].name().equalsIgnoreCase(day)) {
+               logger.info(day + " : " + (i + 1));
+            }
+        }
+    }
+}
